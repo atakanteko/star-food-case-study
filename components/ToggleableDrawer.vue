@@ -11,28 +11,37 @@
     class="align-margin-left"
     width="309"
   >
-    <v-list>
-      <v-list-item
-        v-for="(item, i) in items"
-        :key="i"
-        :to="item.to"
-        router
-        exact
-      >
-        <v-list-item-action>
-          <v-icon>{{ item.icon }}</v-icon>
-        </v-list-item-action>
-        <v-list-item-content>
-          <v-list-item-title v-text="item.title" />
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
+    <div>
+      <div class="info-list-title"><h1>Orders</h1></div>
+      <div class="info-list">
+        <div><span class="list-font-style">Number</span></div>
+        <div><span class="list-font-style-gray">1</span></div>
+      </div>
+      <div class="info-list">
+        <div><span class="list-font-style">Number</span></div>
+        <div><span class="list-font-style-gray">1</span></div>
+      </div>
+      <div class="info-list">
+        <div><span class="list-font-style">Number</span></div>
+        <div><span class="list-font-style-gray">1</span></div>
+      </div>
+      <div class="info-list">
+        <div><span class="list-font-style">Number</span></div>
+        <div><span class="list-font-style-gray">1</span></div>
+      </div>
+      <div class="info-list">
+        <div><span class="list-font-style">Number</span></div>
+        <div><span class="list-font-style-gray">1</span></div>
+      </div>
+
+    </div>
+
   </v-navigation-drawer>
 </template>
 
 <script>
 export default {
-  name: 'DenemeDrawer',
+  name: 'ToggleableDrawer',
   props: {
     which: {
       type: Number,
@@ -63,4 +72,36 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped lang="scss">
+.info-list{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 26px 0 29px;
+  margin-top: 37px;
+  margin-bottom: 27px;
+}
+.info-list-title{
+  padding: 27px 26px 0 29px;
+  h1 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+.list-font-style-common{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+}
+
+.list-font-style{
+  @extend .list-font-style-common
+}
+.list-font-style-gray{
+  @extend .list-font-style-common;
+  color: #B4B4B5;
+}
+</style>
