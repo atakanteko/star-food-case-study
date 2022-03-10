@@ -3,7 +3,7 @@
     color="#CCCCCC"
     permanent
     v-model="drawer"
-    :mini-variant="miniVariant"
+    :mini-variant="this.$store.getters['store/getNavigationDrawerStatus']"
     :clipped="clipped"
     fixed
     app

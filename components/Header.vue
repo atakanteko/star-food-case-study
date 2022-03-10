@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     toggleDrawer() {
-      console.log('222');
+      this.$store.dispatch('store/toggleNavigationDrawer', !this.$store.getters['store/getNavigationDrawerStatus']);
     },
   },
 };
