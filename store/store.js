@@ -1,5 +1,5 @@
 export const state = () => ({
-  navigationDrawerStatus: false,
+  navigationDrawerStatus: true,
 });
 
 export const getters = {

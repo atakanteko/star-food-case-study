@@ -1,6 +1,7 @@
 <template>
   <v-app dark>
     <NavigationDrawer />
+    <ToggleableDrawer />
     <v-main>
       <div class="main-container">
         <Nuxt />
@@ -11,10 +12,11 @@
 
 <script>
 import NavigationDrawer from '../components/NavigationDrawer';
+import ToggleableDrawer from '../components/ToggleableDrawer';
 
 export default {
   name: 'DefaultLayout',
-  components: { NavigationDrawer },
+  components: { ToggleableDrawer, NavigationDrawer },
   comments: {
     NavigationDrawer,
   },
@@ -54,5 +56,8 @@ export default {
 }
 .v-app-bar-title__content{
   width: 130px !important;
+}
+.align-margin-left{
+  margin-left: 85px !important;
 }
 </style>

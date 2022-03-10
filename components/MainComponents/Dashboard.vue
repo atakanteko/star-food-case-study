@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Header from './Header';
+import Header from '../Header';
 
 export default {
   name: 'DashboardComponent',

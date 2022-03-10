@@ -1,13 +1,15 @@
 <template>
   <v-navigation-drawer
-    color="#EDEDED"
+    color="#F6F6F6"
     permanent
     v-model="drawer"
-    :mini-variant="true"
-    mini-variant-width="85"
+    :mini-variant="this.$store.getters['store/getNavigationDrawerStatus']"
+    mini-variant-width="0"
     :clipped="clipped"
     fixed
     app
+    class="align-margin-left"
+    width="309"
   >
     <v-list>
       <v-list-item
@@ -30,8 +32,11 @@
 
 <script>
 export default {
-  name: 'NavigationDrawer',
+  name: 'DenemeDrawer',
   props: {
+    which: {
+      type: Number,
+    },
   },
   data() {
     return {
@@ -50,6 +55,7 @@ export default {
           to: '/inspire',
         },
       ],
+      miniVariant: false,
       right: true,
       rightDrawer: false,
       title: 'Vuetify.js',
