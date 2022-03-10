@@ -1,9 +1,14 @@
 <template>
-  <h1>Deneme</h1>
+  <Dashboard />
 </template>
 
 <script>
+import Dashboard from '../components/Dashboard';
+
 export default {
   name: 'IndexPage',
+  components: {
+    Dashboard,
+  },
 };
 </script>

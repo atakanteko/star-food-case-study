@@ -49,4 +49,10 @@ export default {
   padding-left: 36px !important;
   padding-top: 30px !important;
 }
+.v-toolbar__content{
+  padding: 0 !important;
+}
+.v-app-bar-title__content{
+  width: 130px !important;
+}
 </style>
