@@ -14,7 +14,31 @@
       <TextField text-area-label="Name" id="text-field-position"/>
       <TextField text-area-label="Contact" id="text-field-position"/>
     </section>
-
+    <section class="order-section-three">
+      <div class="radio-section">
+        <h1 id="radio-title">Trans Type</h1>
+        <div>
+          <v-radio-group row>
+            <v-radio
+              label="Delivery"
+              color="primary"
+              value="Delivery"></v-radio>
+            <v-radio label="Takeaway" color="primary" value="Takeaway"></v-radio>
+          </v-radio-group>
+        </div>
+      </div>
+      <div class="client-message-section">
+        <h1 id="message-section-title">Message to client</h1>
+        <div>
+          <v-text-field
+            v-model="blablabla"
+            class="text-field-message"
+            solo
+            flat
+          ></v-text-field>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -56,8 +80,41 @@ export default {
   color: #737376;
 }
 
+.order-section-three{
+  margin-top: 25px;
+}
+
+.client-message-section{
+ margin-top: 4px;
+}
+.text-field-message{
+  background: #FFFFFF;
+  border: 1.5px solid #CCCCCC;
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 141px;
+  width: 730px;
+}
 #text-field-position{
   margin-top: 32px;
 }
 
+#radio-title{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 27px;
+  letter-spacing: 0.03em;
+  color: #171719;
+}
+
+#message-section-title{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  color: #171719;
+  margin-bottom: 13px;
+}
 </style>
