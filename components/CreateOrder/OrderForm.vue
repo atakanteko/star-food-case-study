@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="client-message-section">
-        <h1 id="message-section-title">Message to client</h1>
+        <h1 class="message-section-title">Message to client</h1>
         <div>
           <v-text-field
             v-model="blablabla"
@@ -36,6 +36,18 @@
             solo
             flat
           ></v-text-field>
+        </div>
+      </div>
+      <div class="order-items-section">
+        <h1 class="message-section-title">Order Items</h1>
+        <div>
+          <v-select
+            v-model="value"
+            :items="items"
+            label="Pending"
+            multiple
+            outlined
+          ></v-select>
         </div>
       </div>
     </section>
@@ -48,6 +60,12 @@ import TextField from '../TextField';
 export default {
   name: 'OrderFormComponent',
   components: { TextField },
+  data() {
+    return {
+      items: ['foo', 'bar', 'fizz', 'buzz'],
+      value: [],
+    };
+  },
 };
 </script>
 <style scoped>
@@ -87,6 +105,10 @@ export default {
 .client-message-section{
  margin-top: 4px;
 }
+.order-items-section{
+ margin-top: 26px;
+}
+
 .text-field-message{
   background: #FFFFFF;
   border: 1.5px solid #CCCCCC;
@@ -108,7 +130,7 @@ export default {
   color: #171719;
 }
 
-#message-section-title{
+.message-section-title{
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
