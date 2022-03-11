@@ -6,21 +6,27 @@
         <div class="order-delivery">
           <h4 class="common-order-title">Order Item</h4>
           <div class="margin-top-info">
-            <span >-</span>
+            <span class="info-style">-</span>
           </div>
         </div>
         <div class="number-delivery">
           <h4 class="common-order-title">Number</h4>
           <div class="margin-top-info">
-            <span >-</span>
+            <span class="info-style">-</span>
           </div>
         </div>
         <div class="cost-delivery">
           <h4 class="common-order-title">Cost</h4>
           <div class="margin-top-info">
-            <span >-</span>
+            <span class="info-style">-</span>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="delivery-details amount">
+      <h1 class="delivery-title">Total Amount:</h1>
+      <div>
+        <span class="info-style" style="margin-right: 32px">-</span>
       </div>
     </div>
   </div>
@@ -34,6 +40,17 @@ export default {
 <style scoped>
 .order-information{
   line-height: normal;
+}
+.amount {
+  display: flex;
+  justify-content: space-between;
+}
+.info-style{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  color: #171719;
 }
 .delivery-details{
   width: 651px;
