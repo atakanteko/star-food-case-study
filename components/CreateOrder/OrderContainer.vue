@@ -1,6 +1,7 @@
 <template>
   <div class="order-form-container">
     <OrderForm />
+    <div class="line"></div>
     <OrderInformation/>
   </div>
 </template>
@@ -21,5 +22,12 @@ export default {
 .order-form-container {
   display: flex;
   flex-direction: row;
+}
+.line{
+  margin-left: 34px;
+  margin-right: 47px;
+  margin-top: 59px;
+  border: 1px solid #EBEBEB;
+
 }
 </style>
