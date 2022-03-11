@@ -14,23 +14,23 @@
     <div>
       <div class="info-list-title"><h1>Orders</h1></div>
       <div class="info-list">
-        <div><span class="list-font-style">Number</span></div>
+        <div><span class="list-font-style">New Order</span></div>
         <div><span class="list-font-style-gray">1</span></div>
       </div>
       <div class="info-list">
-        <div><span class="list-font-style">Number</span></div>
+        <div><span class="list-font-style">Accepted</span></div>
         <div><span class="list-font-style-gray">1</span></div>
       </div>
       <div class="info-list">
-        <div><span class="list-font-style">Number</span></div>
-        <div><span class="list-font-style-gray">1</span></div>
+        <div><span class="list-font-style">Cooking</span></div>
+        <div><span class="list-font-style-gray">3</span></div>
       </div>
       <div class="info-list">
-        <div><span class="list-font-style">Number</span></div>
-        <div><span class="list-font-style-gray">1</span></div>
+        <div><span class="list-font-style">Parcel Ready</span></div>
+        <div><span class="list-font-style-gray">3</span></div>
       </div>
       <div class="info-list">
-        <div><span class="list-font-style">Number</span></div>
+        <div><span class="list-font-style">Delivered</span></div>
         <div><span class="list-font-style-gray">1</span></div>
       </div>
 
