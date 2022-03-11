@@ -9,22 +9,20 @@
     fixed
     app
   >
-    <v-list>
-      <v-list-item
-        v-for="(item, i) in items"
-        :key="i"
-        :to="item.to"
-        router
-        exact
-      >
-        <v-list-item-action>
-          <v-icon>{{ item.icon }}</v-icon>
-        </v-list-item-action>
-        <v-list-item-content>
-          <v-list-item-title v-text="item.title" />
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
+    <div class="navigation-container">
+      <div >
+        <img src="~/assets/images/BlueLogo.svg" alt="sort svg" width="60" height="60"/>
+      </div>
+      <div class="nav-items-container perfect-center">
+        <img src="~/assets/images/Cube.svg" alt="sort svg" width="20" height="22.5"/>
+      </div>
+      <div class="nav-items-container perfect-center">
+        <img src="~/assets/images/Layers.svg" alt="sort svg" width="22.5" height="22.5"/>
+      </div>
+      <div class="nav-items-container perfect-center">
+        <img src="~/assets/images/Settings.svg" alt="sort svg" width="22.5" height="22.5"/>
+      </div>
+    </div>
   </v-navigation-drawer>
 </template>
 
@@ -57,4 +55,22 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+.navigation-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: 15px;
+}
+.nav-items-container{
+  width: 85px;
+  height: 64px;
+}
+
+.perfect-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
