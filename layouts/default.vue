@@ -60,4 +60,12 @@ export default {
 .align-margin-left{
   margin-left: 85px !important;
 }
+.v-input--radio-group__input label{
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  line-height: 21px !important;
+  color: #171719 !important;
+  margin-left: 4px;
+}
 </style>
