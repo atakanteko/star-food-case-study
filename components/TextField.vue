@@ -44,7 +44,7 @@ span {
   border: 1.5px solid #CCCCCC;
   box-sizing: border-box;
   border-radius: 5px;
-  height: 50px;
+  height: 51px;
   width: 730px;
   margin-top: 13px;
 }
