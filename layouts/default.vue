@@ -55,7 +55,7 @@ export default {
   padding: 0 !important;
 }
 .v-app-bar-title__content{
-  width: 130px !important;
+  width: fit-content !important;
 }
 .align-margin-left{
   margin-left: 85px !important;
