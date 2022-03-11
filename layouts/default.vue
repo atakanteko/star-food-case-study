@@ -68,4 +68,7 @@ export default {
   color: #171719 !important;
   margin-left: 4px;
 }
+.v-input--radio-group--row .v-input__control {
+  margin-top: -3px;
+}
 </style>
