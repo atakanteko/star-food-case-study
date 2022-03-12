@@ -66,9 +66,14 @@
         <div class="sub-items-display">
           <h3 id="order-item-price">{{item.price}}$</h3>
           <div id="meal-counter">
-            <span class="counter-font">-</span>
+            <span class="counter-font"
+                  @click="decQuantity(item.id)"
+                  @keydown="decQuantity(item.id)"
+                  :class="{disableClick: item.quantity === 1}">-</span>
             <span id="counter-number-font">{{item.quantity}}</span>
-            <span class="counter-font">+</span>
+            <span class="counter-font"
+                  @click="incQuantity(item.id)"
+                  @keydown="incQuantity(item.id)">+</span>
           </div>
           <div style="margin-left: 30px; margin-top:3px"><img src="../../assets/images/remove.svg" alt=""></div>
         </div>
@@ -96,6 +101,14 @@ export default {
       clientMessage: null,
       radios: 'Delivery',
     };
+  },
+  methods: {
+    decQuantity(id) {
+      this.$store.dispatch('store/quantityProcess', { processType: false, id });
+    },
+    incQuantity(id) {
+      this.$store.dispatch('store/quantityProcess', { processType: true, id });
+    },
   },
   watch: {
     selectedMeals(newValue) {
@@ -217,8 +230,12 @@ export default {
   font-weight: 400;
   font-size: 16px;
   color: #AAAAAA;
+  cursor: pointer;
 }
 
+.disableClick{
+  pointer-events: none;
+}
 #order-item-name{
   font-style: normal;
   font-weight: 400;

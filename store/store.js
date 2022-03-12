@@ -23,11 +23,16 @@ export const actions = {
         const i = {
           ...item,
           quantity: 1,
+          cost: 0,
         };
         temp.push(i);
       }
     });
     context.commit('PUSH_SELECTED_MEALS', temp);
+  },
+  quantityProcess: async (context, { processType, id }) => {
+    const orderItems = context.getters.getSelectedOrderedMeals;
+    context.commit('QUANTITY_PROCESS', { orderItems, processType, id });
   },
 };
 
@@ -37,5 +42,28 @@ export const mutations = {
   },
   PUSH_SELECTED_MEALS(state, selectedMealsArr) {
     state.selectedOrderedMeals = selectedMealsArr;
+  },
+  QUANTITY_PROCESS(state, { orderItems, processType, id }) {
+    console.log('id', id);
+    console.log(orderItems);
+    if (processType) {
+      console.log('2');
+      orderItems.forEach(i => {
+        console.log('i', i);
+        if (i.id === id) {
+          console.log('243');
+          i.quantity++;
+        }
+      });
+    } else {
+      console.log('4');
+      orderItems.forEach(i => {
+        if (i.id === id) {
+          console.log('243c');
+          i.quantity--;
+        }
+      });
+    }
+    console.log(orderItems);
   },
 };
