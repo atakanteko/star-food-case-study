@@ -57,6 +57,20 @@
         </div>
       </div>
     </section>
+    <section class="order-section-selected-meals">
+      <div class="item-row">
+        <div><h3 id="order-item-name">Beef Stroganoff</h3></div>
+        <div class="sub-items-display">
+          <h3 id="order-item-price">29$</h3>
+          <div id="meal-counter">
+            <span class="counter-font">-</span>
+            <span id="counter-number-font">1</span>
+            <span class="counter-font">+</span>
+          </div>
+          <div style="margin-left: 30px; margin-top:3px"><img src="../../assets/images/remove.svg" alt=""></div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -164,7 +178,53 @@ export default {
    color: #171719;
    margin-bottom: 13px;
 }
+.order-section-selected-meals .item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.sub-items-display {
+  display: flex;
+}
+.sub-items-display #meal-counter{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 2px solid #0B69FF;
+  border-radius: 12px;
+  width: 69px;
+  height: 24px;
+  margin-left: 46px;
+}
+
+.counter-font{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #AAAAAA;
+}
+#order-item-name{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  color: #171719;
+
+}
+#order-item-price{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: #171719;
+  margin-top: 1px;
+}
+#counter-number-font{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #171719;
+}
 #text-field-name{
   margin-top: 32px;
 }
