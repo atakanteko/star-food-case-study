@@ -31,7 +31,7 @@
     </div>
     <section class="order-section-button">
       <div>
-        <button id="order-btn"><span>Add Order</span></button>
+        <button id="order-btn" :class="{greenBg:this.$store.getters['store/getSelectedOrderedMeals'].length > 0}"><span>Add Order</span></button>
       </div>
     </section>
   </div>
@@ -95,7 +95,9 @@ export default {
   display: flex;
   justify-content: flex-end;
 }
-
+.greenBg{
+  background-color: #0DC74E !important;
+}
 #order-btn{
   width: fit-content;
   height: 63px;
