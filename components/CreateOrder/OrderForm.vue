@@ -52,6 +52,7 @@
             label="Pending"
             multiple
             outlined
+            style="width: 730px !important;"
           ></v-select>
         </div>
       </div>
@@ -79,6 +80,11 @@ export default {
       clientMessage: null,
       radios: 'Delivery',
     };
+  },
+  watch: {
+    selectedMeals(newValue) {
+      this.$store.dispatch('store/calculateSelectedOrderedMeals', newValue);
+    },
   },
   mounted() {
     this.items = this.value && this.value.map(item => item.name);
