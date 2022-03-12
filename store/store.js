@@ -1,9 +1,13 @@
+import menu from '../assets/model/menu.json';
+
 export const state = () => ({
   navigationDrawerStatus: true,
+  meals: menu,
 });
 
 export const getters = {
   getNavigationDrawerStatus: state => state.navigationDrawerStatus,
+  getMenuList: state => state.meals,
 };
 
 export const actions = {
