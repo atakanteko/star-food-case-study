@@ -7,7 +7,7 @@
       </div>
       <div class="order-label">
         <span style="margin-right: 17px;">Date & Time:</span>
-        <span class="gray-label">01/01/2020 at 3:27Pm</span>
+        <span class="gray-label">{{ time }}</span>
       </div>
     </section>
     <section class="order-section-two">
@@ -18,12 +18,17 @@
       <div class="radio-section">
         <h1 id="radio-title">Trans Type</h1>
         <div>
-          <v-radio-group row>
+          <v-radio-group row v-model="radios">
             <v-radio
               label="Delivery"
               color="primary"
-              value="Delivery"></v-radio>
-            <v-radio label="Takeaway" color="primary" value="Takeaway"></v-radio>
+              value="Delivery"
+            ></v-radio>
+            <v-radio
+              label="Takeaway"
+              color="primary"
+              value="Takeaway"
+              ></v-radio>
           </v-radio-group>
         </div>
       </div>
@@ -67,13 +72,26 @@ export default {
   },
   data() {
     return {
+      time: null,
       items: null,
       selectedMeals: [],
       clientMessage: null,
+      radios: 'Delivery',
     };
   },
   mounted() {
     this.items = this.value && this.value.map(item => item.name);
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    let mm = today.getMonth() + 1; // Months start at 0!
+    let dd = today.getDate();
+
+    if (dd < 10) dd = `0${dd}`;
+    if (mm < 10) mm = `0${mm}`;
+
+    const t = `${dd}/${mm}/${yyyy}`;
+    const s = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+    this.time = `${t} at ${s}`;
   },
 };
 </script>
