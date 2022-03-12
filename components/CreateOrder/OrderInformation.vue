@@ -31,6 +31,7 @@
     </div>
     <section class="order-section-button">
       <div>
+        <button id="cancel-btn" v-if="this.$store.getters['store/getSelectedOrderedMeals'].length > 0"><span>Cancel</span></button>
         <button id="order-btn" :class="{greenBg:this.$store.getters['store/getSelectedOrderedMeals'].length > 0}"><span>Add Order</span></button>
       </div>
     </section>
@@ -97,13 +98,15 @@ export default {
 }
 .greenBg{
   background-color: #0DC74E !important;
+  border: 1.5px solid #0DC74E !important;
 }
 #order-btn{
-  width: fit-content;
+  width: 314px;
   height: 63px;
   background: #2A71FA;
   border-radius: 5px;
   padding: 18px 103px;
+  border: 1.5px solid #2A71FA;
 }
 
 #order-btn span {
@@ -111,7 +114,25 @@ export default {
   font-weight: 500;
   font-size: 23px;
   line-height: 27px;
-  letter-spacing: 0.03em;
   color: #F6F6F6;
+
+}
+
+#cancel-btn{
+  width: 314px;
+  height: 63px;
+  margin-right: 17px;
+  border-radius: 5px;
+  padding: 18px 103px;
+  background: #FFFFFF;
+  border: 1.5px solid #CCCCCC;
+  box-sizing: border-box;
+}
+
+#cancel-btn span {
+  font-size: 23px;
+  line-height: 27px;
+  letter-spacing: 0.03em;
+  color: #737376
 }
 </style>
