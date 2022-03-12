@@ -64,7 +64,8 @@
            :key="index">
         <div><h3 id="order-item-name">{{item.name}}</h3></div>
         <div class="sub-items-display">
-          <h3 id="order-item-price">{{item.price}}$</h3>
+          <h3 id="order-item-price" v-if="item.cost === 0">{{item.price}}$</h3>
+          <h3 id="order-item-price" v-else>{{item.cost}}$</h3>
           <div id="meal-counter">
             <span class="counter-font"
                   @click="decQuantity(item.id)"

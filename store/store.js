@@ -23,7 +23,7 @@ export const actions = {
         const i = {
           ...item,
           quantity: 1,
-          cost: 0,
+          cost: Number(parseInt(item.price, 10).toFixed(2)),
         };
         temp.push(i);
       }
@@ -44,26 +44,24 @@ export const mutations = {
     state.selectedOrderedMeals = selectedMealsArr;
   },
   QUANTITY_PROCESS(state, { orderItems, processType, id }) {
-    console.log('id', id);
-    console.log(orderItems);
     if (processType) {
-      console.log('2');
       orderItems.forEach(i => {
-        console.log('i', i);
         if (i.id === id) {
-          console.log('243');
           i.quantity++;
+          console.log(typeof i.cost);
+          i.cost += Number(parseInt(i.price, 10).toFixed(2));
         }
       });
     } else {
-      console.log('4');
       orderItems.forEach(i => {
         if (i.id === id) {
-          console.log('243c');
           i.quantity--;
+          if (i.cost !== 0) {
+            i.cost -= Number(parseInt(i.price, 10).toFixed(2));
+          }
         }
       });
     }
-    console.log(orderItems);
+    state.selectedOrderedMeals = orderItems;
   },
 };
