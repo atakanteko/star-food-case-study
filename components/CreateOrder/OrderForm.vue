@@ -59,13 +59,15 @@
     </section>
     <section class="order-section-selected-meals"
              v-if="this.$store.getters['store/getSelectedOrderedMeals'].length > 0">
-      <div class="item-row">
-        <div><h3 id="order-item-name">Beef Stroganoff</h3></div>
+      <div class="item-row"
+           v-for="(item,index) in this.$store.getters['store/getSelectedOrderedMeals']"
+           :key="index">
+        <div><h3 id="order-item-name">{{item.name}}</h3></div>
         <div class="sub-items-display">
-          <h3 id="order-item-price">29$</h3>
+          <h3 id="order-item-price">{{item.price}}$</h3>
           <div id="meal-counter">
             <span class="counter-font">-</span>
-            <span id="counter-number-font">1</span>
+            <span id="counter-number-font">{{item.quantity}}</span>
             <span class="counter-font">+</span>
           </div>
           <div style="margin-left: 30px; margin-top:3px"><img src="../../assets/images/remove.svg" alt=""></div>

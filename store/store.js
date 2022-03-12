@@ -22,7 +22,7 @@ export const actions = {
       if (meals.some(x => x === item.name)) {
         const i = {
           ...item,
-          number: 1,
+          quantity: 1,
         };
         temp.push(i);
       }
