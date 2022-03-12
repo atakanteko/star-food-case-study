@@ -36,6 +36,6 @@ export default {
   margin-right: 47px;
   margin-top: 59px;
   border: 1px solid #EBEBEB;
-
+  height: 682px;
 }
 </style>
