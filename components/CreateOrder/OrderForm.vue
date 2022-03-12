@@ -64,8 +64,8 @@
            :key="index">
         <div><h3 id="order-item-name">{{item.name}}</h3></div>
         <div class="sub-items-display">
-          <h3 id="order-item-price" v-if="item.cost === 0">{{item.price}}$</h3>
-          <h3 id="order-item-price" v-else>{{item.cost}}$</h3>
+          <h3 class="order-item-price" v-if="item.cost === 0">{{item.price}}$</h3>
+          <h3 class="order-item-price" v-else>{{item.cost}}$</h3>
           <div id="meal-counter">
             <span class="counter-font"
                   @click="decQuantity(item.id)"
@@ -245,7 +245,7 @@ export default {
   color: #171719;
 
 }
-#order-item-price{
+.order-item-price{
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
