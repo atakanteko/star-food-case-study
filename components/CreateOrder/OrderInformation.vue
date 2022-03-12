@@ -3,14 +3,14 @@
     <div class="delivery-details">
       <h1 class="delivery-title">Delivery Details</h1>
       <div class="delivery-titles">
-        <h4 class="common-order-title">Order Item</h4>
-        <h4 class="common-order-title">Number</h4>
-        <h4 class="common-order-title">Cost</h4>
+        <h4 class="common-order-title" style="margin-right: 176px">Order Item</h4>
+        <h4 class="common-order-title" style="margin-right: 196px;">Number</h4>
+        <h4 class="common-order-title" >Cost</h4>
       </div>
       <div class="delivery-content margin-top-info"
            v-if="this.$store.getters['store/getSelectedOrderedMeals'].length === 0">
-        <span class="info-style">-</span>
-        <span class="info-style">-</span>
+        <span class="info-style" style="margin-right: 259px">-</span>
+        <span class="info-style" style="margin-right: 256px">-</span>
         <span class="info-style">-</span>
       </div>
       <div class="delivery-content margin-top-info"
@@ -26,7 +26,8 @@
     <div class="delivery-details amount">
       <h1 class="delivery-title">Total Amount:</h1>
       <div>
-        <span class="info-style" style="margin-right: 32px">-</span>
+        <span class="info-style" style="margin-right: 32px" v-if="this.$store.getters['store/getTotalCost'] === 0">-</span>
+        <span class="info-style" style="margin-right: 32px" v-else>{{this.$store.getters['store/getTotalCost']}}</span>
       </div>
     </div>
     <section class="order-section-button">
@@ -65,15 +66,8 @@ export default {
   color: #171719;
 }
 
-.delivery-titles {
-  margin-top: 29px;
-  display: flex;
-  justify-content: space-between;
-}
-
 .delivery-content{
   display: flex;
-  justify-content: space-between;
 }
 
 .common-order-title{
@@ -84,9 +78,7 @@ export default {
   letter-spacing: 0.05em;
   color: #737376;
 }
-.common-order-title:last-child{
-  margin-right: 67px;
-}
+
 .amount {
   display: flex;
   justify-content: space-between;
@@ -103,8 +95,8 @@ export default {
 }
 
 .delivery-titles{
+  margin-top: 29px;
   display: flex;
-  justify-content: space-between;
 }
 .margin-top-info{
   margin-top: 8px !important;
