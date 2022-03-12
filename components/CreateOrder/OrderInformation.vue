@@ -2,25 +2,25 @@
   <div class="order-information">
     <div class="delivery-details">
       <h1 class="delivery-title">Delivery Details</h1>
-      <div class="triple-info">
-        <div class="order-delivery">
-          <h4 class="common-order-title">Order Item</h4>
-          <div class="margin-top-info">
-            <span class="info-style">-</span>
-          </div>
-        </div>
-        <div class="number-delivery">
-          <h4 class="common-order-title">Number</h4>
-          <div class="margin-top-info">
-            <span class="info-style">-</span>
-          </div>
-        </div>
-        <div class="cost-delivery">
-          <h4 class="common-order-title">Cost</h4>
-          <div class="margin-top-info">
-            <span class="info-style">-</span>
-          </div>
-        </div>
+      <div class="delivery-titles">
+        <h4 class="common-order-title">Order Item</h4>
+        <h4 class="common-order-title">Number</h4>
+        <h4 class="common-order-title">Cost</h4>
+      </div>
+      <div class="delivery-content margin-top-info"
+           v-if="this.$store.getters['store/getSelectedOrderedMeals'].length === 0">
+        <span class="info-style">-</span>
+        <span class="info-style">-</span>
+        <span class="info-style">-</span>
+      </div>
+      <div class="delivery-content margin-top-info"
+           v-else
+           v-for="(item,index) in this.$store.getters['store/getSelectedOrderedMeals']"
+           :key="index"
+      >
+        <span class="info-style m-info">{{item.name.length>22? `${item.name.substring(0,22)}...` : item.name}}</span>
+        <span class="info-style m-info">{{item.quantity}}</span>
+        <span class="info-style m-info">{{item.cost}}$</span>
       </div>
     </div>
     <div class="delivery-details amount">
@@ -47,6 +47,46 @@ export default {
 .order-information{
   line-height: normal;
 }
+
+.delivery-details{
+  width: 651px;
+  height: fit-content;
+  background: #F6F6F6;
+  border-radius: 5px;
+  margin-top: 22px;
+  padding: 26px;
+}
+
+.delivery-title{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  color: #171719;
+}
+
+.delivery-titles {
+  margin-top: 29px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.delivery-content{
+  display: flex;
+  justify-content: space-between;
+}
+
+.common-order-title{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  color: #737376;
+}
+.common-order-title:last-child{
+  margin-right: 67px;
+}
 .amount {
   display: flex;
   justify-content: space-between;
@@ -58,35 +98,14 @@ export default {
   letter-spacing: 0.05em;
   color: #171719;
 }
-.delivery-details{
-  width: 651px;
-  height: fit-content;
-  background: #F6F6F6;
-  border-radius: 5px;
-  margin-top: 22px;
-  padding: 26px;
+.m-info:last-child{
+  margin-right: 62px;
 }
-.delivery-title{
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 21px;
-  color: #171719;
-}
-.common-order-title{
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 20px;
-  letter-spacing: 0.05em;
-  color: #737376;
-}
-.triple-info{
-  margin-top: 29px;
+
+.delivery-titles{
   display: flex;
   justify-content: space-between;
 }
-
 .margin-top-info{
   margin-top: 8px !important;
 }
