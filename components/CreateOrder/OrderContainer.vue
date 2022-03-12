@@ -1,6 +1,6 @@
 <template>
   <div class="order-form-container">
-    <OrderForm />
+    <OrderForm v-model="menu"/>
     <div class="line"></div>
     <OrderInformation/>
   </div>
@@ -15,6 +15,14 @@ export default {
   components: {
     OrderInformation: OrderInformationComponent,
     OrderForm: OrderFormComponent,
+  },
+  data() {
+    return {
+      menu: this.$store.getters['store/getMenuList'].list,
+    };
+  },
+  mounted() {
+    console.log();
   },
 };
 </script>

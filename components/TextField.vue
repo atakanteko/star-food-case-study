@@ -7,8 +7,10 @@
         <v-text-field
           v-model="inputValue"
           class="text-field-input"
+          :rules="inputRules"
           solo
           flat
+          :id="id"
         ></v-text-field>
       </v-col>
     </v-row>
@@ -22,11 +24,30 @@ export default {
     textAreaLabel: {
       type: String,
     },
+    id: {
+      type: String,
+    },
   },
   data() {
     return {
       inputValue: null,
+      inputRules: [
+        v => !!v || 'required field',
+      ],
     };
+  },
+  methods: {
+    checkInputField() {
+      if (this.inputValue && this.inputValue.length === 0) {
+        return 'This field can not be empty';
+      }
+      return false;
+    },
+  },
+  watch: {
+    inputValue(newValue) {
+      console.log(newValue);
+    },
   },
 };
 </script>

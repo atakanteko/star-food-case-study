@@ -11,8 +11,8 @@
       </div>
     </section>
     <section class="order-section-two">
-      <TextField text-area-label="Name" id="text-field-position"/>
-      <TextField text-area-label="Contact" id="text-field-position"/>
+      <TextField text-area-label="Name"  class="mt-8" id="text-field-name"/>
+      <TextField text-area-label="Contact" class="mt-8" id="text-field-contact"/>
     </section>
     <section class="order-section-three">
       <div class="radio-section">
@@ -31,7 +31,7 @@
         <h1 class="message-section-title">Message to client</h1>
         <div>
           <v-text-field
-            v-model="blablabla"
+            v-model="clientMessage"
             class="text-field-message"
             solo
             flat
@@ -42,7 +42,7 @@
         <h1 class="message-section-title">Order Items</h1>
         <div>
           <v-select
-            v-model="value"
+            v-model="selectedMeals"
             :items="items"
             label="Pending"
             multiple
@@ -60,11 +60,20 @@ import TextField from '../TextField';
 export default {
   name: 'OrderFormComponent',
   components: { TextField },
+  props: {
+    value: {
+      type: Array,
+    },
+  },
   data() {
     return {
-      items: ['foo', 'bar', 'fizz', 'buzz'],
-      value: [],
+      items: null,
+      selectedMeals: [],
+      clientMessage: null,
     };
+  },
+  mounted() {
+    this.items = this.value && this.value.map(item => item.name);
   },
 };
 </script>
@@ -117,7 +126,10 @@ export default {
   height: 141px;
   width: 730px;
 }
-#text-field-position{
+#text-field-name{
+  margin-top: 32px;
+}
+#text-field-contact{
   margin-top: 32px;
 }
 
