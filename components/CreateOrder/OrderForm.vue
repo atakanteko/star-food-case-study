@@ -57,7 +57,8 @@
         </div>
       </div>
     </section>
-    <section class="order-section-selected-meals">
+    <section class="order-section-selected-meals"
+             v-if="this.$store.getters['store/getSelectedOrderedMeals'].length > 0">
       <div class="item-row">
         <div><h3 id="order-item-name">Beef Stroganoff</h3></div>
         <div class="sub-items-display">
@@ -72,8 +73,7 @@
       </div>
     </section>
   </div>
-</template>
-
+</template>s
 <script>
 import TextField from '../TextField';
 
@@ -120,14 +120,17 @@ export default {
 };
 </script>
 <style scoped>
+
 .order-form{
   margin-top: 30px;
   line-height: normal;
   width: fit-content;
 }
+
 .order-label {
   margin-bottom: 20px;
 }
+
 .order-label span:first-child {
     font-style: normal;
     font-weight: 500;
@@ -136,6 +139,7 @@ export default {
     letter-spacing: 0.05em;
     color: #171719;
 }
+
 .order-label span:nth-child(2) {
   margin-left: 59px;
 }
@@ -156,6 +160,7 @@ export default {
 .client-message-section{
  margin-top: 4px;
 }
+
 .order-items-section{
  margin-top: 26px;
 }
@@ -178,15 +183,22 @@ export default {
    color: #171719;
    margin-bottom: 13px;
 }
+
+.order-section-selected-meals:last-child{
+  margin-bottom: 20px;
+}
+
 .order-section-selected-meals .item-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 21px;
 }
 
 .sub-items-display {
   display: flex;
 }
+
 .sub-items-display #meal-counter{
   display: flex;
   justify-content: space-evenly;
@@ -204,6 +216,7 @@ export default {
   font-size: 16px;
   color: #AAAAAA;
 }
+
 #order-item-name{
   font-style: normal;
   font-weight: 400;
@@ -225,6 +238,7 @@ export default {
   font-size: 14px;
   color: #171719;
 }
+
 #text-field-name{
   margin-top: 32px;
 }
