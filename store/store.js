@@ -4,12 +4,14 @@ export const state = () => ({
   navigationDrawerStatus: true,
   meals: menu,
   selectedOrderedMeals: [],
+  totalCost: 0,
 });
 
 export const getters = {
   getNavigationDrawerStatus: state => state.navigationDrawerStatus,
   getMenuList: state => state.meals,
   getSelectedOrderedMeals: state => state.selectedOrderedMeals,
+  getTotalCost: state => state.totalCost,
 };
 
 export const actions = {
