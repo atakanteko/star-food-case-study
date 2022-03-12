@@ -3,7 +3,7 @@
     <section class="order-section-one">
       <div class="order-label">
         <span>Order Number:</span>
-        <span class="gray-label">#988123</span>
+        <span class="gray-label">#{{ orderNumber }}</span>
       </div>
       <div class="order-label">
         <span style="margin-right: 17px;">Date & Time:</span>
@@ -73,6 +73,7 @@ export default {
   data() {
     return {
       time: null,
+      orderNumber: null,
       items: null,
       selectedMeals: [],
       clientMessage: null,
@@ -81,6 +82,7 @@ export default {
   },
   mounted() {
     this.items = this.value && this.value.map(item => item.name);
+
     const today = new Date();
     const yyyy = today.getFullYear();
     let mm = today.getMonth() + 1; // Months start at 0!
@@ -92,6 +94,8 @@ export default {
     const t = `${dd}/${mm}/${yyyy}`;
     const s = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
     this.time = `${t} at ${s}`;
+
+    this.orderNumber = Math.floor(Math.random() * (999999 - 100000 + 1)) + 10;
   },
 };
 </script>
