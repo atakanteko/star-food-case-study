@@ -126,9 +126,21 @@ export default {
   height: 141px;
   width: 730px;
 }
+
+.message-section-title{
+   font-style: normal;
+   font-weight: 500;
+   font-size: 18px;
+   line-height: 21px;
+   letter-spacing: 0.05em;
+   color: #171719;
+   margin-bottom: 13px;
+}
+
 #text-field-name{
   margin-top: 32px;
 }
+
 #text-field-contact{
   margin-top: 32px;
 }
@@ -142,13 +154,4 @@ export default {
   color: #171719;
 }
 
-.message-section-title{
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
-  letter-spacing: 0.05em;
-  color: #171719;
-  margin-bottom: 13px;
-}
 </style>

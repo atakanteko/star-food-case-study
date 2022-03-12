@@ -29,6 +29,11 @@
         <span class="info-style" style="margin-right: 32px">-</span>
       </div>
     </div>
+    <section class="order-section-button">
+      <div>
+        <button id="order-btn"><span>Add Order</span></button>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -83,5 +88,28 @@ export default {
 
 .margin-top-info{
   margin-top: 8px !important;
+}
+
+.order-section-button{
+  margin-top: 32px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#order-btn{
+  width: fit-content;
+  height: 63px;
+  background: #2A71FA;
+  border-radius: 5px;
+  padding: 18px 103px;
+}
+
+#order-btn span {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 27px;
+  letter-spacing: 0.03em;
+  color: #F6F6F6;
 }
 </style>
