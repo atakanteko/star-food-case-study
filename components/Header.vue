@@ -5,7 +5,7 @@
   height="36px"
   >
     <v-app-bar-nav-icon @click="toggleDrawer"></v-app-bar-nav-icon>
-    <v-app-bar-title style="font-size: 30px; margin-left:-10px;" >
+    <v-app-bar-title style="font-size: 30px; margin-left:-10px;" data-test-id="header">
       {{ title }}
     </v-app-bar-title>
   </v-app-bar>
