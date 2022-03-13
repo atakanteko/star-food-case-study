@@ -104,6 +104,7 @@ export default {
         totalCost: this.totalPrice,
       };
       this.$store.dispatch('store/listModelAction', listModel);
+      this.$emit('clearSignal', true);
       this.$router.push('/');
     },
   },
