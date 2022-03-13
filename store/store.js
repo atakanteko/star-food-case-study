@@ -5,6 +5,7 @@ export const state = () => ({
   meals: menu,
   selectedOrderedMeals: [],
   totalCost: 0,
+  listModel: [],
 });
 
 export const getters = {
@@ -12,9 +13,13 @@ export const getters = {
   getMenuList: state => state.meals,
   getSelectedOrderedMeals: state => state.selectedOrderedMeals,
   getTotalCost: state => state.totalCost,
+  getListModel: state => state.listModel,
 };
 
 export const actions = {
+  listModelAction: async (context, model) => {
+    context.commit('LIST_MODEL', model);
+  },
   toggleNavigationDrawer: async (context, status) => {
     context.commit('TOGGLE_NAV_DRAWER_STATUS', status);
   },
@@ -43,6 +48,10 @@ export const actions = {
 };
 
 export const mutations = {
+  LIST_MODEL(state, payload) {
+    console.log();
+    state.listModel.push(payload);
+  },
   TOGGLE_NAV_DRAWER_STATUS(state, status) {
     state.navigationDrawerStatus = status;
   },
