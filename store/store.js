@@ -49,7 +49,6 @@ export const actions = {
 
 export const mutations = {
   LIST_MODEL(state, payload) {
-    console.log();
     state.listModel.push(payload);
   },
   TOGGLE_NAV_DRAWER_STATUS(state, status) {
@@ -66,7 +65,6 @@ export const mutations = {
       orderItems.forEach(i => {
         if (i.id === id) {
           i.quantity++;
-          console.log(typeof i.cost);
           i.cost += Number(parseInt(i.price, 10).toFixed(2));
         }
       });

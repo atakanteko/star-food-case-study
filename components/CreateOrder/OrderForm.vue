@@ -167,7 +167,6 @@ export default {
       }
     },
     radios(radio) {
-      console.log(radio);
       this.$emit('sendRadioValue', radio);
     },
     clientMessage(value) {

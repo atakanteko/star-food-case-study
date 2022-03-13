@@ -37,9 +37,6 @@ export default {
       radioMes: null,
     };
   },
-  mounted() {
-    console.log();
-  },
   methods: {
     clearSignal(signal) {
       this.clearSignalForOrderItems = signal;
@@ -51,11 +48,9 @@ export default {
       this.cValue = val;
     },
     sendRadioValue(val) {
-      console.log('ccc', val);
       this.radioMes = val;
     },
     sendClientMessage(val) {
-      console.log('xxx', val);
       this.clientMes = val;
     },
   },
