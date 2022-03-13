@@ -13,21 +13,26 @@
         <span class="info-style" style="margin-right: 256px">-</span>
         <span class="info-style">-</span>
       </div>
-      <div class="delivery-content margin-top-info"
-           v-else
+      <div class="d-flex"
            v-for="(item,index) in this.$store.getters['store/getSelectedOrderedMeals']"
            :key="index"
-      >
-        <span class="info-style m-info">{{item.name.length>22? `${item.name.substring(0,22)}...` : item.name}}</span>
-        <span class="info-style m-info">{{item.quantity}}</span>
-        <span class="info-style m-info">{{item.cost}}$</span>
+           v-else>
+        <div class="d-names d-flex flex-column">
+          <span class="info-style">{{item.name.length>22? `${item.name.substring(0,22)}...` : item.name}}</span>
+        </div>
+        <div class="d-quantity d-flex flex-column">
+          <span class="info-style">{{item.quantity}}</span>
+        </div>
+        <div class="q-price d-flex flex-column">
+          <span class="info-style">{{item.cost}}$</span>
+        </div>
       </div>
-    </div>
+     </div>
     <div class="delivery-details amount">
       <h1 class="delivery-title">Total Amount:</h1>
       <div>
-        <span class="info-style" style="margin-right: 32px" v-if="this.$store.getters['store/getTotalCost'] === 0">-</span>
-        <span class="info-style" style="margin-right: 32px" v-else>{{this.$store.getters['store/getTotalCost']}}</span>
+        <span class="info-style" style="margin-right: 32px" v-if="this.totalPrice === 0">-</span>
+        <span class="info-style" style="margin-right: 32px" v-else>{{this.totalPrice}}$</span>
       </div>
     </div>
     <section class="order-section-button">
@@ -42,6 +47,21 @@
 <script>
 export default {
   name: 'OrderInformationComponent',
+  data() {
+    return {
+    };
+  },
+  computed: {
+    totalPrice() {
+      let total = 0;
+      this.$store.getters['store/getSelectedOrderedMeals'].forEach(item => {
+        total += item.cost;
+      });
+      return total;
+    },
+
+  },
+
 };
 </script>
 <style scoped>
@@ -89,9 +109,6 @@ export default {
   line-height: 21px;
   letter-spacing: 0.05em;
   color: #171719;
-}
-.m-info:last-child{
-  margin-right: 62px;
 }
 
 .delivery-titles{
