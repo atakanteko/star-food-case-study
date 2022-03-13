@@ -7,7 +7,8 @@
           <img src="../../assets/images/Tgg.svg" alt="group-2.png" />
         </div>
         <div>
-          <span class="gray-info-btn-title">Show 10 Elements</span>
+          <span class="gray-info-btn-title" v-if="this.listItems.length > 0">Show {{ this.listItems.length }} Elements</span>
+          <span class="gray-info-btn-title" v-else>Nothing to Show</span>
         </div>
       </div>
       <NuxtLink to="/create_order" style="align-self: end">
