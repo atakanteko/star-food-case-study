@@ -13,14 +13,14 @@
         <span class="info-style" style="margin-right: 256px">-</span>
         <span class="info-style">-</span>
       </div>
-      <div class="d-flex"
+      <div class="d-flex mt-3"
            v-for="(item,index) in this.$store.getters['store/getSelectedOrderedMeals']"
            :key="index"
            v-else>
-        <div class="d-names d-flex flex-column">
+        <div class="d-names d-flex flex-column" style="width: 263px">
           <span class="info-style">{{item.name.length>22? `${item.name.substring(0,22)}...` : item.name}}</span>
         </div>
-        <div class="d-quantity d-flex flex-column">
+        <div class="d-quantity d-flex flex-column" style="width: 263px">
           <span class="info-style">{{item.quantity}}</span>
         </div>
         <div class="q-price d-flex flex-column">
@@ -37,7 +37,9 @@
     </div>
     <section class="order-section-button">
       <div>
-        <button id="cancel-btn" v-if="this.$store.getters['store/getSelectedOrderedMeals'].length > 0"><span>Cancel</span></button>
+        <button id="cancel-btn"
+                @click="clearAll"
+                v-if="this.$store.getters['store/getSelectedOrderedMeals'].length > 0"><span>Cancel</span></button>
         <button id="order-btn" :class="{greenBg:this.$store.getters['store/getSelectedOrderedMeals'].length > 0}"><span>Add Order</span></button>
       </div>
     </section>
@@ -59,9 +61,13 @@ export default {
       });
       return total;
     },
-
   },
-
+  methods: {
+    clearAll() {
+      this.$store.dispatch('store/clearAll');
+      this.$emit('clearSignal', true);
+    },
+  },
 };
 </script>
 <style scoped>

@@ -52,6 +52,7 @@
             label="Pending"
             multiple
             outlined
+            clearable
             style="width: 730px !important;"
           ></v-select>
         </div>
@@ -92,6 +93,10 @@ export default {
     value: {
       type: Array,
     },
+    signal: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -114,6 +119,11 @@ export default {
   watch: {
     selectedMeals(newValue) {
       this.$store.dispatch('store/calculateSelectedOrderedMeals', newValue);
+    },
+    signal() {
+      if (this.signal) {
+        this.selectedMeals = [];
+      }
     },
   },
   mounted() {

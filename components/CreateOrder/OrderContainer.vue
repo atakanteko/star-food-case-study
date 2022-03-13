@@ -1,8 +1,8 @@
 <template>
   <div class="order-form-container">
-    <OrderForm v-model="menu"/>
+    <OrderForm v-model="menu" :signal="this.clearSignalForOrderItems"/>
     <div class="line"></div>
-    <OrderInformation/>
+    <OrderInformation @clearSignal="clearSignal"/>
   </div>
 </template>
 
@@ -19,10 +19,16 @@ export default {
   data() {
     return {
       menu: this.$store.getters['store/getMenuList'].list,
+      clearSignalForOrderItems: null,
     };
   },
   mounted() {
     console.log();
+  },
+  methods: {
+    clearSignal(signal) {
+      this.clearSignalForOrderItems = signal;
+    },
   },
 };
 </script>

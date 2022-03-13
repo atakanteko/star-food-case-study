@@ -36,6 +36,10 @@ export const actions = {
     const orderItems = context.getters.getSelectedOrderedMeals;
     context.commit('QUANTITY_PROCESS', { orderItems, processType, id });
   },
+  clearAll: context => {
+    const cleanArr = [];
+    context.commit('CLEAR', cleanArr);
+  },
 };
 
 export const mutations = {
@@ -44,6 +48,9 @@ export const mutations = {
   },
   PUSH_SELECTED_MEALS(state, selectedMealsArr) {
     state.selectedOrderedMeals = selectedMealsArr;
+  },
+  CLEAR(state, cleanArr) {
+    state.selectedOrderedMeals = cleanArr;
   },
   QUANTITY_PROCESS(state, { orderItems, processType, id }) {
     if (processType) {
