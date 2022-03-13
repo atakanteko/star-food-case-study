@@ -6,6 +6,8 @@ import Dashboard from '../components/OrderList/Dashboard';
 const model =
   [
     {
+      orderNumber: '123123',
+      timeInfo: '14/03/2022 at 12:19:18',
       name: '0537 295 8282',
       contact: 'Ata',
       radio: 'Takeaway',
@@ -37,6 +39,7 @@ function mountComponent() {
     store,
     vuetify: new Vuetify(),
     stubs: {
+      NuxtLink: true,
     },
     mocks: {
     },

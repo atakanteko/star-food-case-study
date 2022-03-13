@@ -175,6 +175,12 @@ export default {
         this.$emit('sendClientMessage', value);
       }
     },
+    orderNumber(value) {
+      this.$emit('sendOrder', value);
+    },
+    time(value) {
+      this.$emit('sendTime', value);
+    },
   },
   mounted() {
     this.items = this.value && this.value.map(item => item.name);

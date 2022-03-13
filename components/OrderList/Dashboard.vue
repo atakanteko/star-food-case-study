@@ -28,11 +28,11 @@
         <div class="order-list-item-1 d-flex flex-row">
           <div class="d-flex flex-column" style="margin-right: 119px">
             <span class="order-list-item-title">Order number</span>
-            <span class="order-list-item-info">#988123</span>
+            <span class="order-list-item-info">#{{ item.orderNumber }}</span>
           </div>
           <div class="d-flex flex-column" style="margin-right: 107px">
             <span class="order-list-item-title">Date & Time</span>
-            <span class="order-list-item-info">01/01/2020 at 2:14Pm</span>
+            <span class="order-list-item-info">{{ item.timeInfo }}</span>
           </div>
           <div class="d-flex flex-column" style="margin-right: 107px">
             <span class="order-list-item-title">Name</span>

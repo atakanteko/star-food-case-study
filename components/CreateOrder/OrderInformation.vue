@@ -67,6 +67,12 @@ export default {
     clientInfo: {
       type: String,
     },
+    orderNum: {
+      type: Number,
+    },
+    timeInfo: {
+      type: String,
+    },
   },
   data() {
     return {
@@ -88,6 +94,8 @@ export default {
     },
     createModel() {
       const listModel = {
+        timeInfo: this.timeInfo,
+        orderNumber: this.orderNum,
         name: this.nameInput,
         contact: this.contactInput,
         radio: this.radioInfo || 'Delivery',

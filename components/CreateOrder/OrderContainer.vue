@@ -6,6 +6,8 @@
                @sendNameInputValue="sendNameInputValue"
                @sendClientMessage="sendClientMessage"
                @sendRadioValue="sendRadioValue"
+               @sendTime="sendTime"
+               @sendOrder="sendOrder"
     />
     <div class="line"></div>
     <OrderInformation @clearSignal="clearSignal"
@@ -13,6 +15,8 @@
                       :contactInput="this.cValue"
                       :radioInfo="this.radioMes"
                       :clientInfo="this.clientMes"
+                      :timeInfo="this.time"
+                      :orderNum="this.orderNumber"
     />
   </div>
 </template>
@@ -35,6 +39,8 @@ export default {
       cValue: null,
       clientMes: null,
       radioMes: null,
+      time: null,
+      orderNumber: null,
     };
   },
   methods: {
@@ -52,6 +58,12 @@ export default {
     },
     sendClientMessage(val) {
       this.clientMes = val;
+    },
+    sendTime(val) {
+      this.time = val;
+    },
+    sendOrder(val) {
+      this.orderNumber = val;
     },
   },
 };
