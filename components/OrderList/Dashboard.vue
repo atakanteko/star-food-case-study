@@ -7,7 +7,7 @@
           <img src="../../assets/images/Tgg.svg" alt="group-2.png" />
         </div>
         <div>
-          <span class="gray-info-btn-title" v-if="this.listItems.length > 0">Show {{ this.listItems.length }} Elements</span>
+          <span class="gray-info-btn-title" v-if="this.reversedList.length > 0">Show {{ this.reversedList.length }} Elements</span>
           <span class="gray-info-btn-title" v-else>Nothing to Show</span>
         </div>
       </div>
@@ -20,9 +20,9 @@
       </NuxtLink>
     </section>
     <div class="b-line mt-7"></div>
-    <section class="order-list" v-if="this.listItems.length > 0">
+    <section class="order-list" v-if="this.reversedList.length > 0">
       <div class="order-list-item d-flex flex-column"
-          v-for="(item,index) in this.listItems"
+          v-for="(item,index) in this.reversedList"
           :key="index"
       >
         <div class="order-list-item-1 d-flex flex-row">
@@ -101,6 +101,7 @@ export default {
   data() {
     return {
       listItems: null,
+      reversedList: null,
     };
   },
   computed: {
@@ -111,6 +112,8 @@ export default {
       immediate: true,
       handler() {
         this.listItems = this.$store.getters['store/getListModel'];
+        this.reversedList = [...this.listItems].reverse();
+        console.log(this.reversedList);
       },
     },
   },
