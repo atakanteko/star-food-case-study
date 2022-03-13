@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Dashboard from '../components/MainComponents/Dashboard';
+import Dashboard from '../components/OrderList/Dashboard';
 
 export default {
   name: 'IndexPage',
