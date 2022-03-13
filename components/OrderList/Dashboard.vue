@@ -43,7 +43,12 @@
           </div>
           <div class="d-flex flex-column" style="margin-right: 123px">
             <span class="order-list-item-title">Trans Type</span>
-            <span class="order-list-item-info">{{item.radio}}</span>
+            <span class="order-list-item-info delivery-style" v-if="item.radio === 'Delivery'">
+              <span>{{item.radio}}</span>
+            </span>
+            <span class="order-list-item-info takeaway-style" v-else>
+              <span>{{item.radio}}</span>
+            </span>
           </div>
           <div class="d-flex flex-column">
             <span class="order-list-item-title">Trans Type</span>
@@ -111,6 +116,43 @@ export default {
 };
 </script>
 <style scoped>
+.takeaway-style{
+  background: #FC7501;
+  border-radius: 3px;
+  padding: 2px 6px 3px 5px;
+  width: fit-content;
+  height: 25px;
+}
+.takeaway-style span{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+}
+.delivery-style{
+  background: #2A71FA;
+  border-radius: 3px;
+  padding: 2px 6px 3px 5px;
+  width: fit-content;
+  height: 25px;
+}
+
+.delivery-style span{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+}
 .order-list-item-s-3-blue-btn span {
   font-style: normal;
   font-weight: 500;
