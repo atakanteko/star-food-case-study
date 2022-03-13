@@ -40,7 +40,12 @@
         <button id="cancel-btn"
                 @click="clearAll"
                 v-if="this.$store.getters['store/getSelectedOrderedMeals'].length > 0"><span>Cancel</span></button>
-        <button id="order-btn" :class="{greenBg:this.$store.getters['store/getSelectedOrderedMeals'].length > 0}"><span>Add Order</span></button>
+        <button id="order-btn"
+                :class="{greenBg:this.$store.getters['store/getSelectedOrderedMeals'].length > 0}"
+                @click="createModel"
+        >
+          <span>Add Order</span>
+        </button>
       </div>
     </section>
   </div>
@@ -49,6 +54,20 @@
 <script>
 export default {
   name: 'OrderInformationComponent',
+  props: {
+    contactInput: {
+      type: String,
+    },
+    nameInput: {
+      type: String,
+    },
+    radioInfo: {
+      type: String,
+    },
+    clientInfo: {
+      type: String,
+    },
+  },
   data() {
     return {
     };
@@ -66,6 +85,17 @@ export default {
     clearAll() {
       this.$store.dispatch('store/clearAll');
       this.$emit('clearSignal', true);
+    },
+    createModel() {
+      const listModel = {
+        name: this.nameInput,
+        contact: this.contactInput,
+        radio: this.radioInfo || 'Delivery',
+        clientMessage: this.clientInfo,
+        orderedItems: this.$store.getters['store/getSelectedOrderedMeals'],
+        totalCost: this.totalPrice,
+      };
+      console.log(listModel);
     },
   },
 };

@@ -11,8 +11,36 @@
       </div>
     </section>
     <section class="order-section-two">
-      <TextField text-area-label="Name"  class="mt-8" id="text-field-name"/>
-      <TextField text-area-label="Contact" class="mt-8" id="text-field-contact"/>
+      <div>
+        <span>Name</span>
+        <v-row>
+          <v-col cols="12" sm="12"
+          >
+            <v-text-field
+              v-model="inputValueName"
+              class="text-field-input"
+              :rules="inputRules"
+              solo
+              flat
+            ></v-text-field>
+          </v-col>
+        </v-row>
+      </div>
+      <div class="mt-8">
+        <span>Contact</span>
+        <v-row>
+          <v-col cols="12" sm="12"
+          >
+            <v-text-field
+              v-model="inputValueContact"
+              class="text-field-input"
+              :rules="inputRules"
+              solo
+              flat
+            ></v-text-field>
+          </v-col>
+        </v-row>
+      </div>
     </section>
     <section class="order-section-three">
       <div class="radio-section">
@@ -84,11 +112,9 @@
   </div>
 </template>s
 <script>
-import TextField from '../TextField';
 
 export default {
   name: 'OrderFormComponent',
-  components: { TextField },
   props: {
     value: {
       type: Array,
@@ -106,6 +132,11 @@ export default {
       selectedMeals: [],
       clientMessage: null,
       radios: 'Delivery',
+      inputValueName: null,
+      inputValueContact: null,
+      inputRules: [
+        v => !!v || 'required field',
+      ],
     };
   },
   methods: {
@@ -117,12 +148,32 @@ export default {
     },
   },
   watch: {
+    inputValueContact(newValue) {
+      if (newValue.length > 0) {
+        this.$emit('sendNameInputValue', newValue);
+      }
+    },
+    inputValueName(newValue) {
+      if (newValue.length > 0) {
+        this.$emit('sendContactInputValue', newValue);
+      }
+    },
     selectedMeals(newValue) {
       this.$store.dispatch('store/calculateSelectedOrderedMeals', newValue);
     },
     signal() {
       if (this.signal) {
         this.selectedMeals = [];
+      }
+    },
+    radios(radio) {
+      console.log(radio);
+      this.$emit('sendRadioValue', radio);
+    },
+    clientMessage(value) {
+      if (value.length > 0) {
+        console.log(value);
+        this.$emit('sendClientMessage', value);
       }
     },
   },
@@ -146,6 +197,24 @@ export default {
 };
 </script>
 <style scoped>
+
+span {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  color: #171719;
+}
+.text-field-input{
+  background: #FFFFFF;
+  border: 1.5px solid #CCCCCC;
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 51px;
+  width: 730px;
+  margin-top: 13px;
+}
 
 .order-form{
   margin-top: 30px;

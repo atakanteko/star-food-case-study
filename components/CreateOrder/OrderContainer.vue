@@ -1,8 +1,19 @@
 <template>
   <div class="order-form-container">
-    <OrderForm v-model="menu" :signal="this.clearSignalForOrderItems"/>
+    <OrderForm v-model="menu"
+               :signal="this.clearSignalForOrderItems"
+               @sendContactInputValue="sendContactInputValue"
+               @sendNameInputValue="sendNameInputValue"
+               @sendClientMessage="sendClientMessage"
+               @sendRadioValue="sendRadioValue"
+    />
     <div class="line"></div>
-    <OrderInformation @clearSignal="clearSignal"/>
+    <OrderInformation @clearSignal="clearSignal"
+                      :nameInput="this.iValue"
+                      :contactInput="this.cValue"
+                      :radioInfo="this.radioMes"
+                      :clientInfo="this.clientMes"
+    />
   </div>
 </template>
 
@@ -20,6 +31,10 @@ export default {
     return {
       menu: this.$store.getters['store/getMenuList'].list,
       clearSignalForOrderItems: null,
+      iValue: null,
+      cValue: null,
+      clientMes: null,
+      radioMes: null,
     };
   },
   mounted() {
@@ -28,6 +43,20 @@ export default {
   methods: {
     clearSignal(signal) {
       this.clearSignalForOrderItems = signal;
+    },
+    sendNameInputValue(val) {
+      this.iValue = val;
+    },
+    sendContactInputValue(val) {
+      this.cValue = val;
+    },
+    sendRadioValue(val) {
+      console.log('ccc', val);
+      this.radioMes = val;
+    },
+    sendClientMessage(val) {
+      console.log('xxx', val);
+      this.clientMes = val;
     },
   },
 };
