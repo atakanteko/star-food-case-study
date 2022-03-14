@@ -34,7 +34,7 @@
             <v-text-field
               v-model="inputValueContact"
               class="text-field-input"
-              :rules="inputRules"
+              :rules="contactRules"
               solo
               flat
             ></v-text-field>
@@ -136,6 +136,10 @@ export default {
       inputValueContact: null,
       inputRules: [
         v => !!v || 'required field',
+      ],
+      contactRules: [
+        v => !!v || 'required field',
+        v => /^(05|5)[0-9][0-9][1-9]([0-9]){6}/.test(v) || 'Your phone number format should be 05554441122',
       ],
     };
   },
