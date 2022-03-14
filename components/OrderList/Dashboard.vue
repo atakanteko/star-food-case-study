@@ -69,7 +69,8 @@
 
           <div class="order-list-item-s-3-titles d-flex flex-column">
             <span>Additional information from customer</span>
-            <span>{{item.clientMessage}}</span>
+            <span v-if="item.clientMessage !== null ">{{item.clientMessage}}</span>
+            <span v-else>No message</span>
           </div>
           <div class="order-list-item-s-3-btns d-flex flex-row align-self-center align-center">
             <div style="margin-top: 6px">
