@@ -50,4 +50,14 @@ describe('Dialog Component', () => {
     wrapper.vm.closeDialog();
     expect(wrapper.vm.decline).toBeFalsy();
   });
+  test('close dialog method should emit false', async () => {
+    const param = {
+      dialog: false,
+    };
+    const wrapper = mountComponent(param);
+    wrapper.setData({ decline: true });
+    wrapper.vm.closeDialog();
+    await wrapper.vm.$nextTick();
+    expect(wrapper.emitted(['changeDialog'][0][0])).toBeFalsy();
+  });
 });
