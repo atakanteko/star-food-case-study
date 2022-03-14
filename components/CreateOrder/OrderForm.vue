@@ -170,6 +170,11 @@ export default {
     },
     selectedMeals(newValue) {
       this.$store.dispatch('store/calculateSelectedOrderedMeals', newValue);
+      if (newValue.length > 0) {
+        this.$store.dispatch('store/markClientMessageFieldAsDirty', true);
+      } else {
+        this.$store.dispatch('store/markClientMessageFieldAsDirty', false);
+      }
     },
     signal() {
       if (this.signal) {

@@ -10,7 +10,7 @@
           Warning
         </v-card-title>
         <v-card-text>
-          Make sure the name and contact fields are filled!
+          Make sure the name, contact and order items fields are filled!
         </v-card-text>
         <v-card-actions>
           <v-spacer />
