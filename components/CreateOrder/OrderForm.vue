@@ -37,7 +37,7 @@
               :rules="contactRules"
               solo
               flat
-              ref="input"
+              type="number"
             ></v-text-field>
           </v-col>
         </v-row>
