@@ -32,4 +32,13 @@ describe('Dialog Component', () => {
     wrapper.setData({ decline: null });
     expect(wrapper.exists()).toBeTruthy();
   });
+  test('dialog status computed should return dialog prop properly', () => {
+    const param = {
+      dialog: false,
+    };
+    const wrapper = mountComponent(param);
+    wrapper.setData({ decline: null });
+    const { dialogStatus } = wrapper.vm;
+    expect(dialogStatus).toBe(param.dialog);
+  });
 });
