@@ -60,4 +60,13 @@ describe('Dialog Component', () => {
     await wrapper.vm.$nextTick();
     expect(wrapper.emitted(['changeDialog'][0][0])).toBeFalsy();
   });
+  test('close sdf method ssdf', async () => {
+    const param = {
+      dialog: false,
+    };
+    const wrapper = mountComponent(param);
+    wrapper.setData({ decline: true });
+    wrapper.vm.$options.watch.dialog(wrapper.vm, true);
+    expect(wrapper.vm.decline).toBeTruthy();
+  });
 });
