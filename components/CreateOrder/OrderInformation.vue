@@ -48,12 +48,18 @@
         </button>
       </div>
     </section>
+    <section>
+      <DialogComponent :dialog="dialogStatus" @changeDialog="changeDialog"/>
+    </section>
   </div>
 </template>
 
 <script>
+import DialogComponent from '../Dialog/Dialog';
+
 export default {
   name: 'OrderInformationComponent',
+  components: { DialogComponent },
   props: {
     contactInput: {
       type: String,
@@ -76,6 +82,7 @@ export default {
   },
   data() {
     return {
+      dialogStatus: false,
     };
   },
   computed: {
@@ -88,24 +95,33 @@ export default {
     },
   },
   methods: {
+    changeDialog(status) {
+      this.dialogStatus = status;
+    },
     clearAll() {
       this.$store.dispatch('store/clearAll');
       this.$emit('clearSignal', true);
     },
     createModel() {
-      const listModel = {
-        timeInfo: this.timeInfo,
-        orderNumber: this.orderNum,
-        name: this.nameInput,
-        contact: this.contactInput,
-        radio: this.radioInfo || 'Delivery',
-        clientMessage: this.clientInfo,
-        orderedItems: this.$store.getters['store/getSelectedOrderedMeals'],
-        totalCost: this.totalPrice,
-      };
-      this.$store.dispatch('store/listModelAction', listModel);
-      this.$emit('clearSignal', true);
-      this.$router.push('/');
+      if (this.$store.getters['store/getNameFieldDirty'] && this.$store.getters['store/getClientMessageFieldDirty']) {
+        const listModel = {
+          timeInfo: this.timeInfo,
+          orderNumber: this.orderNum,
+          name: this.nameInput,
+          contact: this.contactInput,
+          radio: this.radioInfo || 'Delivery',
+          clientMessage: this.clientInfo,
+          orderedItems: this.$store.getters['store/getSelectedOrderedMeals'],
+          totalCost: this.totalPrice,
+        };
+        this.$store.dispatch('store/markNameFieldAsDirty', false);
+        this.$store.dispatch('store/markClientMessageFieldAsDirty', false);
+        this.$store.dispatch('store/listModelAction', listModel);
+        this.$emit('clearSignal', true);
+        this.$router.push('/');
+      } else {
+        this.dialogStatus = true;
+      }
     },
   },
 };
