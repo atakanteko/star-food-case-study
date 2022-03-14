@@ -41,4 +41,13 @@ describe('Dialog Component', () => {
     const { dialogStatus } = wrapper.vm;
     expect(dialogStatus).toBe(param.dialog);
   });
+  test('close dialog method should make decline variable false when it is true', () => {
+    const param = {
+      dialog: false,
+    };
+    const wrapper = mountComponent(param);
+    wrapper.setData({ decline: true });
+    wrapper.vm.closeDialog();
+    expect(wrapper.vm.decline).toBeFalsy();
+  });
 });
