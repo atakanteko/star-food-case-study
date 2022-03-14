@@ -114,7 +114,6 @@ export default {
       handler() {
         this.listItems = this.$store.getters['store/getListModel'];
         this.reversedList = [...this.listItems].reverse();
-        console.log(this.reversedList);
       },
     },
   },
