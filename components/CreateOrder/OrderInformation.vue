@@ -103,7 +103,10 @@ export default {
       this.$emit('clearSignal', true);
     },
     createModel() {
-      if (this.$store.getters['store/getNameFieldDirty'] && this.$store.getters['store/getClientMessageFieldDirty']) {
+      if (this.$store.getters['store/getNameFieldDirty'] &&
+          this.$store.getters['store/getClientMessageFieldDirty'] &&
+          this.$store.getters['store/getSelectedOrdersFieldDirty']
+      ) {
         const listModel = {
           timeInfo: this.timeInfo,
           orderNumber: this.orderNum,

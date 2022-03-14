@@ -37,6 +37,7 @@
               :rules="contactRules"
               solo
               flat
+              ref="input"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -139,7 +140,7 @@ export default {
       ],
       contactRules: [
         v => !!v || 'required field',
-        v => /^(05|5)[0-9][0-9][1-9]([0-9]){6}/.test(v) || 'Your phone number format should be 05554441122',
+        v => /^(05|5)[0-9][0-9][1-9]([0-9]){6}$/.test(v) || 'Your phone number format should be 05554441122',
       ],
     };
   },
@@ -150,10 +151,25 @@ export default {
     incQuantity(id) {
       this.$store.dispatch('store/quantityProcess', { processType: true, id });
     },
+    digitsCount(n) {
+      let count = 0;
+      if (n >= 1) ++count;
+      while (n / 10 >= 1) {
+        n /= 10;
+        ++count;
+      }
+      return count;
+    },
   },
   watch: {
     inputValueContact(newValue) {
-      if (newValue.length > 0) {
+      const digitNum = this.digitsCount(newValue);
+      if (digitNum === 10) {
+        this.$store.dispatch('store/markClientMessageFieldAsDirty', true);
+      } else {
+        this.$store.dispatch('store/markClientMessageFieldAsDirty', false);
+      }
+      if (newValue.length > 0 && digitNum === 10) {
         this.$emit('sendNameInputValue', newValue);
         this.$store.dispatch('store/markClientMessageFieldAsDirty', true);
       } else {
@@ -171,9 +187,9 @@ export default {
     selectedMeals(newValue) {
       this.$store.dispatch('store/calculateSelectedOrderedMeals', newValue);
       if (newValue.length > 0) {
-        this.$store.dispatch('store/markClientMessageFieldAsDirty', true);
+        this.$store.dispatch('store/markSelectedMealsAsDirty', true);
       } else {
-        this.$store.dispatch('store/markClientMessageFieldAsDirty', false);
+        this.$store.dispatch('store/markSelectedMealsAsDirty', false);
       }
     },
     signal() {
