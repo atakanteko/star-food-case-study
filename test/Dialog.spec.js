@@ -60,7 +60,7 @@ describe('Dialog Component', () => {
     await wrapper.vm.$nextTick();
     expect(wrapper.emitted(['changeDialog'][0][0])).toBeFalsy();
   });
-  test('close sdf method ssdf', async () => {
+  test('Dialog watcher should work properly', async () => {
     const param = {
       dialog: false,
     };
