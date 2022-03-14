@@ -6,6 +6,8 @@ export const state = () => ({
   selectedOrderedMeals: [],
   totalCost: 0,
   listModel: [],
+  isNameFieldDirty: false,
+  isClientMessageFieldDirty: false,
 });
 
 export const getters = {
@@ -14,9 +16,17 @@ export const getters = {
   getSelectedOrderedMeals: state => state.selectedOrderedMeals,
   getTotalCost: state => state.totalCost,
   getListModel: state => state.listModel,
+  getNameFieldDirty: state => state.isNameFieldDirty,
+  getClientMessageFieldDirty: state => state.isClientMessageFieldDirty,
 };
 
 export const actions = {
+  markNameFieldAsDirty: async (context, status) => {
+    context.commit('MARK_NAME_FIELD_AS_DIRTY', status);
+  },
+  markClientMessageFieldAsDirty: async (context, status) => {
+    context.commit('MARK_CLIENT_FIELD_AS_DIRTY', status);
+  },
   listModelAction: async (context, model) => {
     context.commit('LIST_MODEL', model);
   },
@@ -48,6 +58,12 @@ export const actions = {
 };
 
 export const mutations = {
+  MARK_NAME_FIELD_AS_DIRTY(state, payload) {
+    state.isNameFieldDirty = payload;
+  },
+  MARK_CLIENT_FIELD_AS_DIRTY(state, payload) {
+    state.isClientMessageFieldDirty = payload;
+  },
   LIST_MODEL(state, payload) {
     state.listModel.push(payload);
   },

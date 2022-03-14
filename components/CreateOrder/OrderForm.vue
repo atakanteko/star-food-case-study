@@ -151,11 +151,17 @@ export default {
     inputValueContact(newValue) {
       if (newValue.length > 0) {
         this.$emit('sendNameInputValue', newValue);
+        this.$store.dispatch('store/markClientMessageFieldAsDirty', true);
+      } else {
+        this.$store.dispatch('store/markClientMessageFieldAsDirty', false);
       }
     },
     inputValueName(newValue) {
       if (newValue.length > 0) {
         this.$emit('sendContactInputValue', newValue);
+        this.$store.dispatch('store/markNameFieldAsDirty', true);
+      } else {
+        this.$store.dispatch('store/markNameFieldAsDirty', false);
       }
     },
     selectedMeals(newValue) {
@@ -171,7 +177,6 @@ export default {
     },
     clientMessage(value) {
       if (value.length > 0) {
-        console.log(value);
         this.$emit('sendClientMessage', value);
       }
     },
