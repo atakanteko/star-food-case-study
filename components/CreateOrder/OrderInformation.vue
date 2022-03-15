@@ -121,7 +121,6 @@ export default {
           orderedItems: this.$store.getters['store/getSelectedOrderedMeals'],
           totalCost: this.totalPrice,
         };
-        console.log(listModel);
         this.$store.dispatch('store/markNameFieldAsDirty', false);
         this.$store.dispatch('store/markClientMessageFieldAsDirty', false);
         this.$store.dispatch('store/listModelAction', listModel);
