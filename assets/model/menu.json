@@ -2,48 +2,33 @@
   "list": [
     {
       "id": "224471",
-      "name": "3 Chicken Wings",
+      "name": "C.Wings",
       "price": "250.00"
     },
     {
       "id": "224474",
-      "name": "Chicken Livers and Portuguese Roll",
+      "name": "ChickenRoll",
       "price": "250.00"
     },
     {
       "id": "224477",
-      "name": "Spicy Mixed Olives (V)",
+      "name": "SpicyMixed",
       "price": "215.00"
     },
     {
       "id": "224480",
-      "name": "Hummus with PERI-PERI Drizzle",
+      "name": "HummusPERI",
       "price": "215.00"
     },
     {
       "id": "224483",
-      "name": "Red Pepper Dip",
+      "name": "RedDip",
       "price": "205.00"
     },
     {
       "id": "224486",
-      "name": "Appeteaser Platter",
+      "name": "Platter",
       "price": "615.00"
-    },
-    {
-      "id": "224489",
-      "name": "All Together Now",
-      "price": "520.00"
-    },
-    {
-      "id": "224543",
-      "name": "On its own",
-      "price": "385.00"
-    },
-    {
-      "id": "224546",
-      "name": "With 1 Regular Side",
-      "price": "485.00"
     }
   ]
 }
