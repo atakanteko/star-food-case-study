@@ -15,7 +15,8 @@
       <div class="info-list-title"><h1>Orders</h1></div>
       <div class="info-list">
         <div><span class="list-font-style">New Order</span></div>
-        <div><span class="list-font-style-gray">1</span></div>
+        <div v-if="this.$store.getters['store/getListModel'].length ===0"><span class="list-font-style-gray" >0</span></div>
+        <div v-else><span class="list-font-style-gray" >{{this.$store.getters['store/getListModel'].length}}</span></div>
       </div>
       <div class="info-list">
         <div><span class="list-font-style">Accepted</span></div>
