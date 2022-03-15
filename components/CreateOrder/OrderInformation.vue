@@ -41,7 +41,10 @@
                 @click="clearAll"
                 v-if="this.$store.getters['store/getSelectedOrderedMeals'].length > 0"><span>Cancel</span></button>
         <button id="order-btn"
-                :class="{greenBg:this.$store.getters['store/getSelectedOrderedMeals'].length > 0}"
+                :class="{greenBg:this.$store.getters['store/getSelectedOrderedMeals'].length > 0 &&
+                          this.$store.getters['store/getNameFieldDirty'] &&
+                          this.$store.getters['store/getClientMessageFieldDirty'] &&
+                          this.$store.getters['store/getSelectedOrdersFieldDirty']}"
                 @click="createModel"
         >
           <span>Add Order</span>

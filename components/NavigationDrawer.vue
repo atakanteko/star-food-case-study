@@ -12,7 +12,7 @@
     <div class="navigation-container">
       <div>
         <NuxtLink to="/">
-        <img src="~/assets/images/BlueLogo.svg" alt="sort svg" width="60" height="60"/>
+        <img src="~/assets/images/BlueLogo.svg" alt="sort svg" width="60" height="60" data-test-id="blue-logo"/>
         </NuxtLink>
       </div>
       <div class="nav-items-container perfect-center">

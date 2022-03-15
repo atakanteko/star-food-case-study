@@ -14,7 +14,7 @@
       <NuxtLink to="/create_order" style="align-self: end">
         <div class="blue-add-btn">
           <div>
-            <span class="blue-btn-title">Add New Order</span>
+            <span class="blue-btn-title" data-test-id="add-new-order">Add New Order</span>
           </div>
         </div>
       </NuxtLink>

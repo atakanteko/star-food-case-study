@@ -11,7 +11,7 @@
     class="align-margin-left"
     width="309"
   >
-    <div>
+    <div data-test-id="toggleable-drawer">
       <div class="info-list-title"><h1>Orders</h1></div>
       <div class="info-list">
         <div><span class="list-font-style">New Order</span></div>
