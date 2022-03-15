@@ -43,6 +43,7 @@ describe('Header File', () => {
   test('Component should mount successfully', () => {
     const param = {
       title: 'Test Data',
+      dataId: 'accepted',
     };
     const wrapper = mountComponent(param);
     expect(wrapper.exists()).toBeTruthy();
@@ -50,9 +51,10 @@ describe('Header File', () => {
   test('should render title properly', () => {
     const param = {
       title: 'Test Data',
+      dataId: 'accepted',
     };
     const wrapper = mountComponent(param);
-    const titleElement = wrapper.find('[data-test-id="header"]');
+    const titleElement = wrapper.find('.test');
     expect(titleElement.text()).toEqual(param.title);
   });
 

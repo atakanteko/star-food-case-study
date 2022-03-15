@@ -5,7 +5,7 @@
   height="36px"
   >
     <v-app-bar-nav-icon @click="toggleDrawer" :data-test-id="`toggleable-btn-${this.dataId}`"></v-app-bar-nav-icon>
-    <v-app-bar-title style="font-size: 30px; margin-left:-10px;" :data-test-id="this.dataId">
+    <v-app-bar-title style="font-size: 30px; margin-left:-10px;" :data-test-id="this.dataId" class="test">
       {{ title }}
     </v-app-bar-title>
   </v-app-bar>
