@@ -22,6 +22,7 @@
               :rules="inputRules"
               solo
               flat
+              data-test-id="order-name-input-box"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -38,6 +39,7 @@
               solo
               flat
               type="number"
+              data-test-id="order-contact-input-box"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -82,6 +84,7 @@
             multiple
             outlined
             clearable
+            data-test-id="order-select-input-box"
             style="width: 730px !important;"
           ></v-select>
         </div>

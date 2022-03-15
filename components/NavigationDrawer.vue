@@ -10,12 +10,12 @@
     app
   >
     <div class="navigation-container">
-      <div>
+      <div >
         <NuxtLink to="/">
-        <img src="~/assets/images/BlueLogo.svg" alt="sort svg" width="60" height="60" data-test-id="blue-logo"/>
+        <img src="~/assets/images/BlueLogo.svg" alt="sort svg" width="60" height="60"/>
         </NuxtLink>
       </div>
-      <div class="nav-items-container perfect-center">
+      <div class="nav-items-container perfect-center" data-test-id="create-order-img">
         <NuxtLink to="/create_order">
         <img src="~/assets/images/Cube.svg" alt="sort svg" width="20" height="22.5"/>
         </NuxtLink>

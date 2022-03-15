@@ -41,6 +41,7 @@
                 @click="clearAll"
                 v-if="this.$store.getters['store/getSelectedOrderedMeals'].length > 0"><span>Cancel</span></button>
         <button id="order-btn"
+                data-test-id="add-order-btn"
                 :class="{greenBg:this.$store.getters['store/getSelectedOrderedMeals'].length > 0 &&
                           this.$store.getters['store/getNameFieldDirty'] &&
                           this.$store.getters['store/getClientMessageFieldDirty'] &&

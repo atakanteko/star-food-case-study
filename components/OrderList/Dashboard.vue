@@ -1,6 +1,6 @@
 <template>
   <div style="width: fit-content">
-    <Header title="Accepted"/>
+    <Header title="Accepted" dataId="accepted"/>
     <section class="d-flex justify-space-between align-baseline" style="margin-top:39px">
       <div class="gray-info-btn" style="margin-right: 863px">
         <div class="gray-info-btn-icon">
