@@ -7,7 +7,8 @@
           <img src="../../assets/images/Tgg.svg" alt="group-2.png" />
         </div>
         <div>
-          <span class="gray-info-btn-title" v-if="this.reversedList.length > 0">Show {{ this.reversedList.length }} Elements</span>
+          <span class="gray-info-btn-title" data-test-id="show-number-of-item"
+                v-if="this.reversedList.length > 0">Show {{ this.reversedList.length }} Elements</span>
           <span class="gray-info-btn-title" v-else>Nothing to Show</span>
         </div>
       </div>
