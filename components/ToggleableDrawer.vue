@@ -16,7 +16,8 @@
       <div class="info-list">
         <div><span class="list-font-style">New Order</span></div>
         <div v-if="this.$store.getters['store/getListModel'].length ===0"><span class="list-font-style-gray" >0</span></div>
-        <div v-else><span class="list-font-style-gray" >{{this.$store.getters['store/getListModel'].length}}</span></div>
+        <div v-else>
+          <span class="list-font-style-gray" data-test-id="toggleable-number-of-added-meal">{{this.$store.getters['store/getListModel'].length}}</span></div>
       </div>
       <div class="info-list">
         <div><span class="list-font-style">Accepted</span></div>
