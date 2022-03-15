@@ -212,6 +212,8 @@ export default {
     signal() {
       if (this.signal) {
         this.selectedMeals = [];
+        this.inputValueContact = '';
+        this.inputValueName = '';
       }
     },
     radios(radio) {
