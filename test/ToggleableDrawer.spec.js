@@ -3,6 +3,23 @@ import Vuetify from 'vuetify';
 import Vuex from 'vuex';
 import ToggleableDrawer from '../components/ToggleableDrawer';
 
+const selectedOrdersMeal =
+  [
+    {
+      id: '224474',
+      name: 'Chicken Livers and Portuguese Roll',
+      price: '250.00',
+      quantity: 1,
+      cost: 250,
+    },
+    {
+      id: '224477',
+      name: 'Spicy Mixed Olives (V)',
+      price: '215.00',
+      quantity: 1,
+      cost: 215,
+    },
+  ];
 function mountComponent(option) {
   const localVue = createLocalVue();
   localVue.use(Vuex);
@@ -10,9 +27,13 @@ function mountComponent(option) {
   const getNavigationDrawerStatusMock = jest.fn();
   getNavigationDrawerStatusMock.mockReturnValue(false);
 
+  const getListModelMock = jest.fn();
+  getListModelMock.mockReturnValue(selectedOrdersMeal);
+
   const store = new Vuex.Store({
     getters: {
       'store/getNavigationDrawerStatus': getNavigationDrawerStatusMock,
+      'store/getListModel': getListModelMock,
     },
   });
 
