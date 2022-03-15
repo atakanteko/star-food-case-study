@@ -80,4 +80,14 @@ export default {
   border: 1px solid #EBEBEB;
   height: 682px;
 }
+
+@media(max-width: 1080px) {
+  .order-form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .line{
+    display: none;
+  }
+}
 </style>

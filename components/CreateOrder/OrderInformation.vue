@@ -233,4 +233,25 @@ export default {
   letter-spacing: 0.03em;
   color: #737376
 }
+
+@media(max-width: 1080px) {
+  .delivery-details{
+    width: 726px;
+    height: fit-content;
+    background: #F6F6F6;
+    border-radius: 5px;
+    margin-top: 22px;
+    padding: 26px;
+  }
+  .order-section-button #order-btn{
+    margin-right: 202px;
+    width: 726px;
+    margin-bottom: 20px;
+  }
+  .order-section-button #cancel-btn{
+    margin-right: 202px;
+    width: 726px;
+    margin-bottom: 10px;
+  }
+}
 </style>
