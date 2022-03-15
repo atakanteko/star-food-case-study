@@ -54,11 +54,13 @@
               label="Delivery"
               color="primary"
               value="Delivery"
+              data-test-id='order-radio-delivery-input-box'
             ></v-radio>
             <v-radio
               label="Takeaway"
               color="primary"
               value="Takeaway"
+              data-test-id='order-radio-takeaway-input-box'
               ></v-radio>
           </v-radio-group>
         </div>

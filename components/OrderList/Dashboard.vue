@@ -24,6 +24,7 @@
       <div class="order-list-item d-flex flex-column"
           v-for="(item,index) in this.reversedList"
           :key="index"
+           :data-test-id="`ordered-meals-container-${index}`"
       >
         <div class="order-list-item-1 d-flex flex-row">
           <div class="d-flex flex-column" style="margin-right: 119px">
@@ -44,10 +45,10 @@
           </div>
           <div class="d-flex flex-column" style="margin-right: 123px">
             <span class="order-list-item-title">Trans Type</span>
-            <span class="order-list-item-info delivery-style" v-if="item.radio === 'Delivery'">
+            <span class="order-list-item-info delivery-style" :data-test-id="`ordered-trans-type-container-${index}`" v-if="item.radio === 'Delivery'">
               <span>{{item.radio}}</span>
             </span>
-            <span class="order-list-item-info takeaway-style" v-else>
+            <span class="order-list-item-info takeaway-style" :data-test-id="`ordered-trans-type-container-${index}`" v-else>
               <span>{{item.radio}}</span>
             </span>
           </div>

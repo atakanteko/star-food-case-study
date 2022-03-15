@@ -114,13 +114,14 @@ export default {
         const listModel = {
           timeInfo: this.timeInfo,
           orderNumber: this.orderNum,
-          name: this.nameInput,
-          contact: this.contactInput,
+          name: this.contactInput,
+          contact: this.nameInput,
           radio: this.radioInfo || 'Delivery',
           clientMessage: this.clientInfo,
           orderedItems: this.$store.getters['store/getSelectedOrderedMeals'],
           totalCost: this.totalPrice,
         };
+        console.log(listModel);
         this.$store.dispatch('store/markNameFieldAsDirty', false);
         this.$store.dispatch('store/markClientMessageFieldAsDirty', false);
         this.$store.dispatch('store/listModelAction', listModel);
