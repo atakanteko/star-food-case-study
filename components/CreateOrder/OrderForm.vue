@@ -111,7 +111,12 @@
                   @click="incQuantity(item.id)"
                   @keydown="incQuantity(item.id)">+</span>
           </div>
-          <div style="margin-left: 30px; margin-top:3px"><img src="../../assets/images/remove.svg" alt=""></div>
+          <div style="margin-left: 30px; margin-top:3px; cursor: pointer"
+               @click="removeMeal(item.id)"
+               @keydown="removeMeal(item.id)"
+          >
+            <img src="../../assets/images/remove.svg" alt="">
+          </div>
         </div>
       </div>
     </section>
@@ -150,6 +155,13 @@ export default {
     };
   },
   methods: {
+    removeMeal(mealId) {
+      this.$store.dispatch('store/removeItem', mealId);
+      const numOfSelectedMeal = this.$store.getters['store/getSelectedOrderedMeals'].length;
+      if (numOfSelectedMeal === 0) {
+        this.selectedMeals = [];
+      }
+    },
     decQuantity(id) {
       this.$store.dispatch('store/quantityProcess', { processType: false, id });
     },

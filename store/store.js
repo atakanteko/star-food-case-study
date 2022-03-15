@@ -23,6 +23,9 @@ export const getters = {
 };
 
 export const actions = {
+  removeItem: async (context, id) => {
+    context.commit('REMOVE_SELECTED_MEAL', id);
+  },
   markSelectedMealsAsDirty: async (context, status) => {
     context.commit('MARK_SELECTED_ORDERS_AS_DIRTY', status);
   },
@@ -63,6 +66,9 @@ export const actions = {
 };
 
 export const mutations = {
+  REMOVE_SELECTED_MEAL(state, id) {
+    state.selectedOrderedMeals = state.selectedOrderedMeals.filter(item => item.id !== id);
+  },
   MARK_SELECTED_ORDERS_AS_DIRTY(state, payload) {
     state.isSelectedOrdersFieldDirty = payload;
   },
