@@ -38,6 +38,7 @@
     <section class="order-section-button">
       <div>
         <button id="cancel-btn"
+                data-test-id="cancel-order-btn"
                 @click="clearAll"
                 v-if="this.$store.getters['store/getSelectedOrderedMeals'].length > 0"><span>Cancel</span></button>
         <button id="order-btn"
