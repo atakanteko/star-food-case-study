@@ -21,19 +21,19 @@
       </div>
       <div class="info-list">
         <div><span class="list-font-style">Accepted</span></div>
-        <div><span class="list-font-style-gray">1</span></div>
+        <div><span class="list-font-style-gray">X</span></div>
       </div>
       <div class="info-list">
         <div><span class="list-font-style">Cooking</span></div>
-        <div><span class="list-font-style-gray">3</span></div>
+        <div><span class="list-font-style-gray">X</span></div>
       </div>
       <div class="info-list">
         <div><span class="list-font-style">Parcel Ready</span></div>
-        <div><span class="list-font-style-gray">3</span></div>
+        <div><span class="list-font-style-gray">X</span></div>
       </div>
       <div class="info-list">
         <div><span class="list-font-style">Delivered</span></div>
-        <div><span class="list-font-style-gray">1</span></div>
+        <div><span class="list-font-style-gray">X</span></div>
       </div>
 
     </div>
