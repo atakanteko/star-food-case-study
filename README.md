@@ -52,4 +52,4 @@ Clone this project and install node dependencies. **-npm install**
 - Run Test --> **npm run test**
 
 ## Test Coverage
-Test Coverage
+![](https://github.com/atakanteko/star-food-case-study/blob/main/assets/images/coverage.png)
