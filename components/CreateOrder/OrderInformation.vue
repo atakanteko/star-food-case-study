@@ -243,13 +243,36 @@ export default {
     padding: 26px;
   }
   .order-section-button #order-btn{
-    margin-right: 202px;
+    margin-right: 67px;
     width: 726px;
     margin-bottom: 20px;
+    margin-left: 10px;
   }
   .order-section-button #cancel-btn{
-    margin-right: 202px;
+    margin-left: 10px;
     width: 726px;
+    margin-bottom: 10px;
+  }
+}
+
+@media(max-width: 800px) {
+  .delivery-details{
+    width: 500px;
+    height: fit-content;
+    background: #F6F6F6;
+    border-radius: 5px;
+    margin-top: 22px;
+    padding: 26px;
+  }
+  .order-section-button #order-btn{
+    margin-right: 72px;
+    width: 500px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+  .order-section-button #cancel-btn{
+    margin-left: 10px;
+    width: 500px;
     margin-bottom: 10px;
   }
 }
