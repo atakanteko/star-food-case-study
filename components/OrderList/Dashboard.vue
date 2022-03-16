@@ -1,7 +1,7 @@
 <template>
   <div style="width: fit-content">
     <Header title="Accepted" dataId="accepted"/>
-    <section class="d-flex justify-space-between align-baseline" style="margin-top:39px">
+    <section class="d-md-flex justify-md-space-between align-md-baseline responsive-style" style="margin-top:39px;">
       <div class="gray-info-btn" style="margin-right: 863px">
         <div class="gray-info-btn-icon">
           <img src="../../assets/images/Tgg.svg" alt="group-2.png" />
@@ -122,6 +122,12 @@ export default {
 };
 </script>
 <style scoped>
+@media(max-width: 1080px) {
+  .responsive-style {
+    margin-top: 20px;
+  }
+}
+
 .takeaway-style{
   background: #FC7501;
   border-radius: 3px;
